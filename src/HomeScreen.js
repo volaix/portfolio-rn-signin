@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Button, Avatar } from 'react-native-elements';
-import TripleAvatar from './components/TripleAvatar';
+import {Button } from 'react-native';
+// import { Button, Avatar } from 'react-native-elements';
+// import TripleAvatar from './components/TripleAvatar';
 import { connect } from 'react-redux'
 import { fetchData } from './actions';
 
@@ -16,7 +17,7 @@ class HomeScreen extends React.Component {
         <Text>Who you are?</Text>
         <Text>Three circle images</Text>
 
-        <TripleAvatar />
+        {/* <TripleAvatar /> */}
 
         <Button
           title='Get Data'
