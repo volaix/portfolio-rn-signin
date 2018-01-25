@@ -1,10 +1,33 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import {Button } from 'react-native';
-// import { Button, Avatar } from 'react-native-elements';
-// import TripleAvatar from './components/TripleAvatar';
+import React from 'react'
+import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
-import { fetchData } from './actions';
+import { fetchData } from './actions'
+import { Button, Avatar, FormLabel, FormInput } from 'react-native-elements'
+import styled from 'styled-components'
+
+import TripleAvatar from './components/TripleAvatar'
+import SignUpForm from './components/SignUpForm';
+
+
+const BackgroundBlueView = styled.View`
+  background-color: 'rgba(41, 48, 68, 1)';
+  height: 100%;
+  width: 100%;
+  align-items: center;
+`
+
+const SignUp = styled.Text`
+  color: white;
+  font-size: 60;
+  margin-bottom: 50
+`
+
+const Subtitle = styled.Text`
+  color: 'rgba(100, 110, 150, 1)';
+  font-size: 16;
+  font-weight: 800;
+  margin-bottom: 60
+`
 
 class HomeScreen extends React.Component {
   onPressGetData = () => {
@@ -12,20 +35,24 @@ class HomeScreen extends React.Component {
   }
   render() {
     return (
-      <View>
-        <Text>Sign Up</Text>
-        <Text>Who you are?</Text>
-        <Text>Three circle images</Text>
+      <BackgroundBlueView>
+        <SignUp>Sign Up</SignUp>
 
-        {/* <TripleAvatar /> */}
+        <Subtitle>{'Who you are?'.toUpperCase()}</Subtitle>
+
+        <TripleAvatar />
+
+        <SignUpForm />
 
         <Button
-          title='Get Data'
+          title='Sign Up'
           onPress={this.props.fetchData}
           backgroundColor='green'
+          borderRadius={20}
         />
 
-        { this.props.appData.isFetching && <Text>Loading</Text> }
+
+        {this.props.appData.isFetching && <Text>Loading</Text>}
         {
           this.props.appData.data.length ? (
             this.props.appData.data.map((person, i) => {
@@ -36,9 +63,9 @@ class HomeScreen extends React.Component {
             })
           ) : null
         }
-        { this.props.appData.error && <Text>There has been an error. We have sent the report to the developers!</Text> }
+        {this.props.appData.error && <Text>There has been an error. We have sent the report to the developers!</Text>}
 
-      </View>
+      </BackgroundBlueView>
     )
   }
 }
