@@ -31,33 +31,7 @@ const RoundedInput = (props) => {
   return (
     <View style={{ alignItems: 'center' }}>
 
-      <AvatarText 
-      style={{fontSize: '11'}}
-      selected={selected}
-      color={props.textColor}
-      >
-      {props.text.toUpperCase()}
-      </AvatarText>
 
-      <ImageWrapper
-        onPress={() => props.onPress(props.optionString)}
-        selected={selected}
-      >
-        <ImageBackground
-          source={props.source}
-          style={{
-            flex: 1,
-            width: '100%',
-            borderRadius: '50%',
-            height: undefined,
-            backgroundColor: 'rgba(0,0,0,0)',
-            overflow: 'hidden',
-            opacity: (selected ? 1 : 0.7)
-          }}
-        >
-        </ImageBackground>
-
-      </ImageWrapper>
     </View>
   )
 }
