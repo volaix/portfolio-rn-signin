@@ -1,7 +1,8 @@
 import React from 'react'
-import { Text, View, TouchableOpacity, Icon, Image, ImageBackground } from 'react-native'
+import { Text, View, Image, ImageBackground, TextInput } from 'react-native'
+import {Icon} from 'react-native-elements'
 import styled from 'styled-components/native';
-import RoundedTextbox from '../components/roundedTextbox';
+import { SUBTITLE_COLOR } from '../constants';
 
 //props taken:
 
@@ -23,14 +24,33 @@ const AvatarText = styled.Text`
   color: ${props => props.color};
   opacity: ${props => props.selected ? 1 : 0.5};
 `
+const inputStyle = {
+  borderStyle: 'solid',
+  borderWidth: 2,
+  borderColor: SUBTITLE_COLOR,
+  borderBottomColor: SUBTITLE_COLOR, //necessary because of white being specified as default
+  borderRadius: 30,
+  height: 40,
+  width: 250,
+  justifyContent: 'center',
+  marginBottom: 10,
+  // flexDirection: 'row',
+}
 
+//Props taken
+//placeholder= 'string' \\the name of the placeholder
 
 const RoundedInput = (props) => {
-  const selected = props.currentlySelected === props.optionString
-
   return (
-    <View style={{ alignItems: 'center' }}>
-
+    <View style={inputStyle}>
+    {/* <Icon
+  name='sc-telegram' /> */}
+      <TextInput
+      style={{color: 'white', marginLeft: 40, borderBottomColor: 'red', fontSize: 18 }}
+    placeholder={props.placeholder}
+    placeholderTextColor={SUBTITLE_COLOR}
+    secureTextEntry={props.secureTextEntry}
+      />
 
     </View>
   )

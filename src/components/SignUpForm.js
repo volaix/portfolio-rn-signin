@@ -6,8 +6,8 @@ import { SUBTITLE_COLOR } from "../constants";
 import RoundedInput from '../customComponents/RoundedInput';
 
 const FormLayout = styled.View`
-  /* align-items: flex-evenly; */
-  /* justify-content: space-around; */
+  align-items: center;
+  /* justify-content: center; */
   /* background-color: rgba(60,60,80,1); */
   width: 100%;
   margin-bottom: 40;
@@ -30,20 +30,19 @@ const inputStyle = {
 const SignUpForm = () => (
   <FormLayout>
 
-<RoundedInput />
-    <FormInput 
-    onChangeText={console.log('hello world')}
-    containerStyle={inputStyle}
-    inputStyle={{color: 'red', marginLeft: 40, borderBottomColor: 'red' }}
-    placeholder="Username"
-    placeholderTextColor={SUBTITLE_COLOR}
-    />
+    <RoundedInput
+    placeholder='Username'
+     />
 
-    <FormLabel>Name</FormLabel>
-    <FormInput onChangeText={console.log('hello world')} />
+    <RoundedInput
+    placeholder='Email'
+     />
 
-    <FormLabel>Name</FormLabel>
-    <FormInput onChangeText={console.log('hello world')} />
+    <RoundedInput
+    placeholder='Password'
+    secureTextEntry
+     />
+
   </FormLayout>
 )
 

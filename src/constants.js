@@ -8,4 +8,4 @@ export const OPTION_1 = 'OPTION_1'
 export const OPTION_2 = 'OPTION_2'
 export const OPTION_3 = 'OPTION_3'
 
-export const SUBTITLE_COLOR = 'rgba(74,84,117,1)'
+export const SUBTITLE_COLOR = 'rgba(98,100,124,1)'
