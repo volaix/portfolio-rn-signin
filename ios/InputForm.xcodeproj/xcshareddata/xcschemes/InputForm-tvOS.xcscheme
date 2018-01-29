@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "relearningRedux-tvOS.app"
-               BlueprintName = "relearningRedux-tvOS"
-               ReferencedContainer = "container:relearningRedux.xcodeproj">
+               BuildableName = "InputForm-tvOS.app"
+               BlueprintName = "InputForm-tvOS"
+               ReferencedContainer = "container:InputForm.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "relearningRedux-tvOSTests.xctest"
-               BlueprintName = "relearningRedux-tvOSTests"
-               ReferencedContainer = "container:relearningRedux.xcodeproj">
+               BuildableName = "InputForm-tvOSTests.xctest"
+               BlueprintName = "InputForm-tvOSTests"
+               ReferencedContainer = "container:InputForm.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "relearningRedux-tvOSTests.xctest"
-               BlueprintName = "relearningRedux-tvOSTests"
-               ReferencedContainer = "container:relearningRedux.xcodeproj">
+               BuildableName = "InputForm-tvOSTests.xctest"
+               BlueprintName = "InputForm-tvOSTests"
+               ReferencedContainer = "container:InputForm.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "relearningRedux-tvOS.app"
-            BlueprintName = "relearningRedux-tvOS"
-            ReferencedContainer = "container:relearningRedux.xcodeproj">
+            BuildableName = "InputForm-tvOS.app"
+            BlueprintName = "InputForm-tvOS"
+            ReferencedContainer = "container:InputForm.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "relearningRedux-tvOS.app"
-            BlueprintName = "relearningRedux-tvOS"
-            ReferencedContainer = "container:relearningRedux.xcodeproj">
+            BuildableName = "InputForm-tvOS.app"
+            BlueprintName = "InputForm-tvOS"
+            ReferencedContainer = "container:InputForm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "relearningRedux-tvOS.app"
-            BlueprintName = "relearningRedux-tvOS"
-            ReferencedContainer = "container:relearningRedux.xcodeproj">
+            BuildableName = "InputForm-tvOS.app"
+            BlueprintName = "InputForm-tvOS"
+            ReferencedContainer = "container:InputForm.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

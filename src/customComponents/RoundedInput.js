@@ -1,13 +1,10 @@
-import { Avatar } from "react-native-elements";
 import React from 'react'
 import { Text, View, TouchableOpacity, Icon, Image, ImageBackground } from 'react-native'
 import styled from 'styled-components/native';
+import RoundedTextbox from '../components/roundedTextbox';
 
 //props taken:
-//source={ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg' }
-//opacity= number         //default = 1
-//optionNumber= 
-//color='string'
+
 
 const ImageWrapper = styled.TouchableOpacity`
   alignItems: 'center';
@@ -27,10 +24,8 @@ const AvatarText = styled.Text`
   opacity: ${props => props.selected ? 1 : 0.5};
 `
 
-//TODO: Make ImageBackground a styled component
-//TODO: When RN gets updated, move the opacity property from imagebackground to imagewrapper
-//TODO: Do font size inside avatarText
-const CustomAvatar = (props) => {
+
+const RoundedInput = (props) => {
   const selected = props.currentlySelected === props.optionString
 
   return (
@@ -67,4 +62,4 @@ const CustomAvatar = (props) => {
   )
 }
 
-export default CustomAvatar
+export default RoundedInput

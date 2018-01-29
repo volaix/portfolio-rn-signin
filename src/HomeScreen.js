@@ -7,25 +7,34 @@ import styled from 'styled-components'
 
 import TripleAvatar from './components/TripleAvatar'
 import SignUpForm from './components/SignUpForm';
-
+import GradientButton from './customComponents/GradientButton'
 
 const BackgroundBlueView = styled.View`
   background-color: 'rgba(41, 48, 68, 1)';
   height: 100%;
   width: 100%;
   align-items: center;
+  justify-content: space-around;
 `
 
 const SignUp = styled.Text`
   color: white;
-  font-size: 60;
+  font-size: 30;
   margin-bottom: 50
+  margin-top: 50
 `
 
 const Subtitle = styled.Text`
-  color: 'rgba(100, 110, 150, 1)';
-  font-size: 16;
-  font-weight: 800;
+  color: 'rgba(115, 132, 176, 1)';
+  font-size: 15;
+  font-weight: 900;
+  margin-bottom: 60
+`
+
+const DisclaimerText = styled.Text`
+  color: 'rgba(115, 132, 176, 1)';
+  font-size: 15;
+  font-weight: 900;
   margin-bottom: 60
 `
 
@@ -44,13 +53,7 @@ class HomeScreen extends React.Component {
 
         <SignUpForm />
 
-        <Button
-          title='Sign Up'
-          onPress={this.props.fetchData}
-          backgroundColor='green'
-          borderRadius={20}
-        />
-
+        <GradientButton />
 
         {this.props.appData.isFetching && <Text>Loading</Text>}
         {
@@ -64,6 +67,10 @@ class HomeScreen extends React.Component {
           ) : null
         }
         {this.props.appData.error && <Text>There has been an error. We have sent the report to the developers!</Text>}
+
+        <DisclaimerText>Already have an account?</DisclaimerText>
+        <DisclaimerText>Login Here!</DisclaimerText>
+
 
       </BackgroundBlueView>
     )

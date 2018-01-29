@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'remote-redux-devtools';
 
 const configureStore = () => {
-  const createStoreWithMiddleware = composeWithDevTools(
+    const createStoreWithMiddleware = composeWithDevTools(
     applyMiddleware(thunk)
   )(createStore)
 

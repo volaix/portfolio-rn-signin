@@ -16,11 +16,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React Native!"
 
-@interface relearningReduxTests : XCTestCase
+@interface InputFormTests : XCTestCase
 
 @end
 
-@implementation relearningReduxTests
+@implementation InputFormTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

@@ -3,11 +3,15 @@ import React from 'react'
 import { View, TouchableOpacity, Icon, Image, ImageBackground } from 'react-native'
 import styled from 'styled-components/native'
 import CustomAvatar from '../customComponents/CustomAvatar';
+import { connect } from 'react-redux'
+
+import { avatarSelect } from '../actions/signUpActions';
+import { OPTION_3, OPTION_1, OPTION_2 } from '../constants';
 
 
 const AvatarLayout = styled.View`
   flex-direction: row;
-  /* align-items: flex-evenly; */
+  align-items: center;
   justify-content: space-around;
   /* background-color: red; */
   width: 100%;
@@ -16,38 +20,41 @@ const AvatarLayout = styled.View`
 
 class TripleAvatar extends React.Component {
   state = {
-    avatarSelected: {
-      option1: false,
-      option2: true,
-      option3: false
-    }
   }
 
-  avatarPress = (optionNumber) =>{
-    console.log('Update Avatar Selection')
-    // console.log('Will update avatar selection:', optionNumber)
+  avatarPress = (optionString) => {
+    this.props.avatarSelect(optionString)
   }
 
   render() {
     return (
       <AvatarLayout>
         <CustomAvatar
-          source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg' }}
+          source={require('../images/avatar1.png')}
           onPress={this.avatarPress}
-          selected={false}
-          optionNumber={'option1'}
+          currentlySelected={this.props.signUpReducer.avatarSelected}
+          optionString={OPTION_1}
+          text='Cool'
+          textColor='rgba(235,199,64,1)'
         />
 
         <CustomAvatar
-          source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg' }}
+          source={require('../images/avatar2.png')}
           onPress={this.avatarPress}
-          selected={true}
+          currentlySelected={this.props.signUpReducer.avatarSelected}
+          optionString={OPTION_2}
+          text='Student'
+          textColor='rgba(44,171,90,1)'
         />
 
+
         <CustomAvatar
-          source={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg' }}
+          source={require('../images/avatar3.png')}
           onPress={this.avatarPress}
-          selected={false}
+          currentlySelected={this.props.signUpReducer.avatarSelected}
+          optionString={OPTION_3}
+          text='Harry'
+          textColor='rgba(55,112,128,1)'
         />
 
       </AvatarLayout>
@@ -55,4 +62,21 @@ class TripleAvatar extends React.Component {
   }
 
 }
-export default TripleAvatar
+
+const mapStateToProps = (state) => {
+  const signUpReducer = state.signUpReducer
+  return {
+    signUpReducer,
+  }
+}
+
+const mapDispatchToProps = {
+  avatarSelect,
+}
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TripleAvatar)
+
