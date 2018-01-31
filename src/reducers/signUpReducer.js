@@ -4,7 +4,6 @@ const initialState = {
 }
 
 const signUpReducer = (state = initialState, action) => {
-  console.log('this is the state', state)
   switch (action.type) {
     case SELECTING_AVATAR:
       return {

@@ -18,9 +18,44 @@ const AvatarLayout = styled.View`
   margin-bottom: 30;
 `
 
+const AvatarList = [
+  {
+    text: 'cool',
+    textColor:'rgba(235,199,64,1)',
+    source: require('../images/avatar1.png'),
+    optionString: OPTION_1,
+  },
+  {
+    text: 'Student',
+    textColor: 'rgba(44,171,90,1)',
+    source: require('../images/avatar2.png'),
+    optionString: OPTION_2,
+  },
+  {
+    text: 'Harry',
+    textColor: 'rgba(55,112,128,1)',
+    source: require('../images/avatar3.png'),
+    optionString: OPTION_3,
+  },
+]
+
+
 class TripleAvatar extends React.Component {
   state = {
   }
+
+avatars = (avatar) => {
+  return (
+    <CustomAvatar
+      text= {avatar.text}
+      textColor={avatar.textColor}
+      source={avatar.source}
+      onPress={this.avatarPress}
+      currentlySelected={this.props.signUpReducer.avatarSelected}
+      optionString={avatar.optionString}
+    />
+  )
+}
 
   avatarPress = (optionString) => {
     this.props.avatarSelect(optionString)
@@ -29,33 +64,8 @@ class TripleAvatar extends React.Component {
   render() {
     return (
       <AvatarLayout>
-        <CustomAvatar
-          source={require('../images/avatar1.png')}
-          onPress={this.avatarPress}
-          currentlySelected={this.props.signUpReducer.avatarSelected}
-          optionString={OPTION_1}
-          text='Cool'
-          textColor='rgba(235,199,64,1)'
-        />
 
-        <CustomAvatar
-          source={require('../images/avatar2.png')}
-          onPress={this.avatarPress}
-          currentlySelected={this.props.signUpReducer.avatarSelected}
-          optionString={OPTION_2}
-          text='Student'
-          textColor='rgba(44,171,90,1)'
-        />
-
-
-        <CustomAvatar
-          source={require('../images/avatar3.png')}
-          onPress={this.avatarPress}
-          currentlySelected={this.props.signUpReducer.avatarSelected}
-          optionString={OPTION_3}
-          text='Harry'
-          textColor='rgba(55,112,128,1)'
-        />
+        {AvatarList.map(this.avatars)}
 
       </AvatarLayout>
     )
