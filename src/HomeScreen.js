@@ -2,12 +2,15 @@ import React from 'react'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { fetchData } from './actions'
-import { Button, Avatar, FormLabel, FormInput } from 'react-native-elements'
+import { Button, Avatar, FormLabel, FormInput} from 'react-native-elements'
 import styled from 'styled-components'
 
 import TripleAvatar from './components/TripleAvatar'
 import SignUpForm from './components/SignUpForm';
 import GradientButton from './customComponents/GradientButton'
+
+
+
 
 const BackgroundBlueView = styled.View`
   background-color: 'rgba(41, 48, 68, 1)';
@@ -54,19 +57,6 @@ class HomeScreen extends React.Component {
         <SignUpForm />
 
         <GradientButton />
-
-        {this.props.appData.isFetching && <Text>Loading</Text>}
-        {
-          this.props.appData.data.length ? (
-            this.props.appData.data.map((person, i) => {
-              return <View key={i} >
-                <Text>Name: {person.name}</Text>
-                <Text>Age: {person.age}</Text>
-              </View>
-            })
-          ) : null
-        }
-        {this.props.appData.error && <Text>There has been an error. We have sent the report to the developers!</Text>}
 
         <DisclaimerText>Already have an account?</DisclaimerText>
         <DisclaimerText>Login Here!</DisclaimerText>
