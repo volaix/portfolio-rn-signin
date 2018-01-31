@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Alert } from 'react-native'
 import { connect } from 'react-redux'
 import { fetchData } from './actions'
 import { Button, Avatar, FormLabel, FormInput} from 'react-native-elements'
@@ -45,18 +45,19 @@ class HomeScreen extends React.Component {
   onPressGetData = () => {
     console.log('you have press onpressgetdata')
   }
+
   render() {
     return (
       <BackgroundBlueView>
         <SignUp>Sign Up</SignUp>
 
-        <Subtitle>{'Who you are?'.toUpperCase()}</Subtitle>
+        <Subtitle>{'Who will you be?'.toUpperCase()}</Subtitle>
 
         <TripleAvatar />
 
         <SignUpForm />
 
-        <GradientButton />
+        <GradientButton onPress={this.alerted} />
 
         <DisclaimerText>Already have an account?</DisclaimerText>
         <DisclaimerText>Login Here!</DisclaimerText>
