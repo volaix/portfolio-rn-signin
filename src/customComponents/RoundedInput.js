@@ -1,6 +1,5 @@
 import React from 'react'
 import { Text, View, Image, ImageBackground, TextInput } from 'react-native'
-import {Icon} from 'react-native-elements'
 import styled from 'styled-components/native';
 import { SUBTITLE_COLOR } from '../constants';
 
@@ -32,10 +31,18 @@ const inputStyle = {
   borderRadius: 30,
   height: 40,
   width: 250,
-  justifyContent: 'center',
+  // justifyContent: 'center',
+  alignItems: 'center',
   marginBottom: 10,
-  // flexDirection: 'row',
+  flexDirection: 'row',
 }
+
+const FutureIcon = styled.View`
+/* background-color: red; */
+height: 25;
+width: 25;
+margin-left: 10;
+`
 
 //Props taken
 //placeholder= 'string' \\the name of the placeholder
@@ -43,10 +50,11 @@ const inputStyle = {
 const RoundedInput = (props) => {
   return (
     <View style={inputStyle}>
-    {/* <Icon
-  name='sc-telegram' /> */}
+
+    <FutureIcon />
+    
       <TextInput
-      style={{color: 'white', marginLeft: 40, borderBottomColor: 'red', fontSize: 18 }}
+      style={{width: 180, color: 'white', marginLeft: 10, borderBottomColor: 'red', fontSize: 18 }}
     placeholder={props.placeholder}
     placeholderTextColor={SUBTITLE_COLOR}
     secureTextEntry={props.secureTextEntry}
